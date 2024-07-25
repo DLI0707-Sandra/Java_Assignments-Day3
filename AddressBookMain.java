@@ -5,7 +5,15 @@ public class AddressBookMain
     public static void main(String[] args)
     {
 
-        
+        String firstname;
+        String lastname;
+        String address;
+        String city;
+        String state;
+        int zip;
+        String  phonenumber;
+        String email;
+        Contacts contact;
         AddressBook addressBook=new AddressBook();
         System.out.println("Welcome to Address Book Program");
         int choice;
@@ -20,26 +28,69 @@ public class AddressBookMain
                 case 1:
                     System.out.println("Enter the contact details:");
                     System.out.println("Firstname:");
-                    String firstname=scannerobject.next();
+                    firstname=scannerobject.next();
                     System.out.println("Lastname:");
-                    String lastname=scannerobject.next();
+                    lastname=scannerobject.next();
                     System.out.println("Address:");
-                    String address=scannerobject.next();
+                    address=scannerobject.next();
                     System.out.println("City:");
-                    String city=scannerobject.next();
+                    city=scannerobject.next();
                     System.out.println("State:");
-                    String state=scannerobject.next();
+                    state=scannerobject.next();
                     System.out.println("zip:");
-                    int zip=scannerobject.nextInt();
+                    zip=scannerobject.nextInt();
                     System.out.println("Phonenumber:");
-                    String  phonenumber=scannerobject.next();
+                    phonenumber=scannerobject.next();
                     System.out.println("Email:");
-                    String email=scannerobject.next();
-                    Contacts contact=new Contacts(firstname,lastname,address,city,state,email,phonenumber,zip);
+                    email=scannerobject.next();
+                    contact=new Contacts(firstname,lastname,address,city,state,email,phonenumber,zip);
                     addressBook.addContact(contact);
                     break;
                 case 2:
                     System.out.println("Enter the name of contact to be edited:");
+                    String name= scannerobject.next();
+                    Contacts oldcontact=addressBook.searchContact(name);
+                    System.out.println("Enter the field to be edited:");
+                    String field=scannerobject.next();
+                    switch (field)
+                    {
+                        case "firstname":
+                                            System.out.println("Enter the new first name:");
+                                            firstname=scannerobject.next();
+                                            oldcontact.setFirstname(firstname);
+                                            break;
+                        case "lastname":    System.out.println("Enter the new last name:");
+                                            lastname=scannerobject.next();
+                                            oldcontact.setLastname(lastname);
+                                            break;
+                        case "address":     System.out.println("Enter the new address:");
+                                            address=scannerobject.next();
+                                            oldcontact.setAddress(address);
+                                            break;
+                        case "city":    System.out.println("Enter the new city:");
+                                        city=scannerobject.next();
+                                        oldcontact.setCity(city);
+                                        break;
+                        case "state":   System.out.println("Enter the new state:");
+                                        state=scannerobject.next();
+                                        oldcontact.setState(state);
+                                        break;
+                        case "zip":     System.out.println("Enter the new zip:");
+                                        zip=scannerobject.nextInt();
+                                        oldcontact.setZip(zip);
+                                        break;
+                        case "email":   System.out.println("Enter the new email:");
+                                        email=scannerobject.next();
+                                        oldcontact.setEmail(email);
+                                        break;
+                        case "phonenumber":
+                                        System.out.println("Enter the new phone number:");
+                                        phonenumber=scannerobject.next();
+                                        oldcontact.setPhonenumber(phonenumber);
+                                        break;
+                    }
+                    System.out.println("Contact changed.New values:");
+                    System.out.println(oldcontact);
                     break;
                 case 3:
                     System.out.println("Enter the name of the contact to be deleted:");
