@@ -22,4 +22,15 @@ public class AddressBook
         return null;
     }
 
+    public void deleteContact(String name)
+    {
+        for (int i = 0; i < contacts.size(); i++)
+        {
+            if (contacts.get(i).firstname.equals(name))
+            {
+                contacts.remove(i);
+                break;
+            }
+        }
+    }
 }
