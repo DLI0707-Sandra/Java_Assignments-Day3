@@ -99,29 +99,6 @@ public class AddressBookMain
                     break;
                 case 4:
                     System.out.println("Enter the number of contacts to be added:");
-                    int number=scannerobject.nextInt();
-                    for(int i=0;i<number;i++)
-                    {
-                        System.out.println("Enter the contact details:");
-                        System.out.println("Firstname:");
-                        firstname=scannerobject.next();
-                        System.out.println("Lastname:");
-                        lastname=scannerobject.next();
-                        System.out.println("Address:");
-                        address=scannerobject.next();
-                        System.out.println("City:");
-                        city=scannerobject.next();
-                        System.out.println("State:");
-                        state=scannerobject.next();
-                        System.out.println("zip:");
-                        zip=scannerobject.nextInt();
-                        System.out.println("Phonenumber:");
-                        phonenumber=scannerobject.next();
-                        System.out.println("Email:");
-                        email=scannerobject.next();
-                        contact=new Contacts(firstname,lastname,address,city,state,email,phonenumber,zip);
-                        addressBook.addContact(contact);
-                    }
                     break;
                 case 5:
                     System.out.println("Exiting!");
