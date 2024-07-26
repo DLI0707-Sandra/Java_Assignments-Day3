@@ -33,4 +33,13 @@ public class AddressBook
             }
         }
     }
+
+    public void displayContacts()
+    {
+        for (int i = 0; i < contacts.size(); i++)
+        {
+            System.out.println("Contact "+(i+1)+":");
+            System.out.println(contacts.get(i));
+        }
+    }
 }

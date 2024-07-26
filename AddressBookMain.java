@@ -20,7 +20,7 @@ public class AddressBookMain
         int choiceNumber;
         do{
             System.out.println("Welcome to Address Book Program");
-            System.out.println("1.Add Address book\n1.Select address book\n3.Exit");
+            System.out.println("1.Add Address book\n1.Select address book\n3.Display address book\n4.Exit");
             choiceNumber=scannerobject.nextInt();
             switch (choiceNumber)
             {
@@ -150,11 +150,16 @@ public class AddressBookMain
 
                     }while(choice!=5);
                     break;
-                case 3:
+                case 3:System.out.println("Enter the name of the address book to be viewed:");
+                    String Addressbook=scannerobject.next();
+                    AddressBook addressBook1=addressBookMap.get(Addressbook);
+                    addressBook1.displayContacts();
+                    break;
+                case 4:
                     System.out.println("Exiting");
                     break;
             }
-        }while (choiceNumber!=3);
+        }while (choiceNumber!=4);
 
 
 
