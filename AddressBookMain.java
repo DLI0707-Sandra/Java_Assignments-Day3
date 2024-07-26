@@ -20,7 +20,7 @@ public class AddressBookMain
         int choiceNumber;
         do{
             System.out.println("Welcome to Address Book Program");
-            System.out.println("1.Add Address book\n1.Select address book\n3.Display address book\n4.Exit");
+            System.out.println("1.Add Address book\n2.Select address book\n3.Display address book\n4.Exit");
             choiceNumber=scannerobject.nextInt();
             switch (choiceNumber)
             {
@@ -33,8 +33,7 @@ public class AddressBookMain
                 case 2:
                     System.out.println("Enter the name of the address book to be selected for operation: ");
                     String addressBookname=scannerobject.next();
-                    AddressBook addressBookobject =new AddressBook();
-                    addressBookobject =addressBookMap.get(addressBookname);
+                    AddressBook addressBookobject =addressBookMap.get(addressBookname);
                     System.out.println("Inside address book :"+addressBookname);
                     int choice;
                     do {
